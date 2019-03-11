@@ -1,6 +1,10 @@
 .SideBar {
-    background-color:rgba(32, 31, 31, 0.96);
-    height: calc(100vh - 55px);
+    background-color: rgba(32, 31, 31, 0.96);
+    height: 100%;
+    width: 25%;
+    position: fixed;
+    display: inline-block;
+    top: 50px;
 }
 
 .sidebar-title {

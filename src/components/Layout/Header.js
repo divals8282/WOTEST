@@ -6,12 +6,17 @@ import ArrowRight from '@material-ui/icons/ArrowRight';
 const HeaderStyle = {
     background: 'rgb(62, 114, 138)',
     padding: '10px',
-    color: 'white'
+    color: 'white',
+    height:'30px',
+    width:'100%',
+    position:'fixed',
+    zIndex:'5'
 }
 
 const LogOut = {
     float: 'right',
-    lineHeight:'32px'
+    lineHeight:'32px',
+    marginRight:'15px'
 }
 
 const LogOutIconStyle = {
@@ -19,13 +24,19 @@ const LogOutIconStyle = {
     verticalAlign:'top'
 }
 
+const TitleStyle = {
+    lineHeight:'30px',
+    marginBottom:'3px'
+}
+
 export default () => {
     return (
-        <Grid container style={HeaderStyle}>
-            <Grid item md={12} sm={12} xs={12} lg={12}>
+        <div style={HeaderStyle}>
+        <Grid container>
+            <Grid item md={12} sm={8} xs={10} lg={12}>
                 <Grid container>
                     <Grid item md={11} sm={11} xs={11} lg={11} >
-                        <Title />
+                        <Title style={TitleStyle}/>
                     </Grid>
                     <Grid item md={1} sm={1} xs={1} lg={1} >
                         <span style={LogOut}>LogOut <ArrowRight style={LogOutIconStyle} /> </span>
@@ -33,5 +44,6 @@ export default () => {
                 </Grid>
             </Grid>
         </Grid>
+        </div>
     )
 }

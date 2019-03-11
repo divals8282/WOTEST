@@ -1,3 +1,30 @@
 .Content {
     padding: 40px;
+    position: relative;
+    top: 50px;
+    left:25%;
+    width: 68%;
+    text-align: center;
+}
+
+.block {
+    margin: 0px 0px 10px 0px !important;
+    padding: 10px;
+}
+
+.block span{ 
+    line-height: 10px
+}
+
+.block:nth-child(1) {
+    background-color: rgba(128, 128, 128, 0.17);
+    border-radius: 2px;
+}
+
+.block:nth-child(2) {
+    min-height: 200px;
+}
+
+.block:nth-child(3) {
+    min-height: 350px;
 }
