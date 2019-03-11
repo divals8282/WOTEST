@@ -1,0 +1,26 @@
+.SignIn{    
+    width: 30%;
+    margin: 10% auto 0px auto;
+    background-color: rgb(62, 114, 138);
+    color: rgb(255, 255, 255);
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.SignIn .title {
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.Header {
+    min-height: 40px;
+}
+
+.Content {
+    min-height: 100px;
+}
+
+.Footer {
+    min-height: 30px;
+}
