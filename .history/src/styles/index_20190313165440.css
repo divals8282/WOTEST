@@ -1,0 +1,15 @@
+.title {
+    font-size: 20px;
+    margin-left: 20px;
+    line-height: 28px;
+}
+
+.Header {
+    background: rgb(62, 114, 138),
+    padding: 10px,
+    color: white,
+    height: 30px,
+    width: 100%,
+    position: fixed,
+    zIndex: 5
+}

@@ -1,10 +1,14 @@
-.SignIn{    
+.SignIn-background{    
     width: 30%;
     margin: 10% auto 0px auto;
     background-color: rgb(62, 114, 138);
     color: rgb(255, 255, 255);
-    padding: 25px;
     border-radius: 10px;
+    overflow: hidden;
+}
+
+.SignIn {
+    padding: 25px;
 }
 
 .SignIn .title {
