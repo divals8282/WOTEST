@@ -3,19 +3,21 @@ const initialState = {
     actions:[
         {
             method:'get',
-            endPont:'user_GetUserData',
+            endPont:'user_getUserData',
+            category:'user',
+            label:'Get User Data',
             parameters: [
                 {
-                    name:'theUserId',
-                    placeHolder:'The User Id',
+                    name:'userId',
+                    placeHolder:'User Id',
                     value:'',
-                    disabled:null
+                    disabled:true
                 },
                 {
                     name:'apiKey',
                     placeHolder:'API Key',
                     value:'',
-                    disabled:null
+                    disabled:true
                 },
             ]
         },
@@ -25,25 +27,28 @@ const initialState = {
 export default (state = initialState,action) => {
     switch(action.type) {
             case 'APPEND_USER_INFO_IN_ACTIONS':
-                let userInfo = action.payload;
-                let newState = state;
-                newState.actions.forEach((action,key) => {
-                    action.parameters.forEach((param,paramKey) => {
-                        switch(param.name){
-                            case'theUserId':
-                                newState.actions[key].parameters[paramKey].value = userInfo.userId;
-                            break;
-                            case'apiKey':
-                                newState.actions[key].parameters[paramKey].value = userInfo.apiKey;
-                            break;
-                            default:
-                                return state;
+                let { actions } = state;
+                actions.forEach((method,methodIndex) => {
+                    method.parameters.forEach((param,paramIndex) => {
+                        for(let field in action.payload) {
+                            
+                            let camelField = field.split('_');
+                            camelField.forEach((part,index) => {
+                                if(index !== 0){
+                                    camelField[index] = part.charAt(0).toUpperCase() + part.slice(1)
+                                }
+                            })
+                            camelField = camelField.join('');
+
+                            if(param.name === camelField) {
+                                actions[methodIndex].parameters[paramIndex].value = action.payload[field];
+                            }
                         }
-                    })
+                    });
                 })
                 return {
                     ...state,
-                    newState    
+                    actions   
                 }
             case 'SET_CURRENT_ACTION':
                 return {

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../styles/SignIn.css'
 
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -7,6 +6,7 @@ import Title from './Title';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { connect } from 'react-redux';
 import $ from 'jquery';
+
 const textFieldStyle = {
     width: '100%',
     margin: '0px 0px 20px 0px',
@@ -16,6 +16,7 @@ const buttonStyle = {
     width: '100%',
     padding: '10px',
 }
+
 class SignIn extends Component {
     constructor() {
         super();

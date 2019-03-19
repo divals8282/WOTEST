@@ -4,11 +4,6 @@ import Title from '../Title';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-const TitleStyle = {
-    lineHeight: '30px',
-    marginBottom: '3px'
-}
-
 class Header extends Component {
     logOut() {
         localStorage.removeItem('userInfo');
@@ -21,10 +16,10 @@ class Header extends Component {
                     <Grid item md={12} sm={8} xs={10} lg={12}>
                         <Grid container>
                             <Grid item md={11} sm={11} xs={11} lg={11} >
-                                <Title style={TitleStyle} />
+                                <Title/>
                             </Grid>
-                            <Grid item md={1} sm={1} xs={1} lg={1} >
-                                <span onClick={this.logOut.bind(this)} className="logOut">LogOut</span>
+                            <Grid item md={1} sm={1} xs={1} lg={1} className="log-out">
+                                <span onClick={this.logOut.bind(this)}>Logout</span>
                             </Grid>
                         </Grid>
                     </Grid>

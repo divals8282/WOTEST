@@ -1,6 +1,5 @@
 import React from 'react';
 import Brightness5 from '@material-ui/icons/Brightness5';
-import '../styles/Title.css';
 
 const iconStyle = {
     fontSize:'30px',

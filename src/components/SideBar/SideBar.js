@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../../styles/SideBar.css';
 import { connect } from 'react-redux';
 
 class SideBar extends Component {
@@ -8,6 +7,7 @@ class SideBar extends Component {
     }
     currentAction(index) {
         this.props.dispatch({type:'SET_CURRENT_ACTION',payload:index});
+        this.props.dispatch({type:'SET_JSON_STATUS',payload:'Passive'})
     }
     render() {
         return (
@@ -19,7 +19,7 @@ class SideBar extends Component {
                     {this.props.actions.map((action,index) => {
                         return (
                             <div onClick={this.currentAction.bind(this,index)} className="action" key={index}>
-                                <span>{action.endPont}</span>
+                                <span>{action.label}</span>
                             </div>
                         )
                     })}
